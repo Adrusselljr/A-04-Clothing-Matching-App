@@ -3,7 +3,7 @@ const date = document.getElementById('date')
 const topImg = document.getElementById('topImg')
 const bottomImg = document.getElementById('bottomImg')
 const shoesImg = document.getElementById('shoesImg')
-const button = document.getElementById('button')
+const tryAgain = document.getElementById('tryAgain')
 
 
 // Show day of the week
@@ -29,36 +29,39 @@ const getDressCode = day => {
 
 // functions for items
 const filteredTypeClothes = clothing.filter(e => {
-    if(e.dressCode.toLowerCase() === getDressCode(d.getDay())) {
+    if(e.dressCode === getDressCode(day)) {
         return e
     }
 })
 
 const filterdTops = filteredTypeClothes.filter(e => {
-    if (e.type.toLowerCase() === "top") {
+    if (e.type === "top") {
         return e
     }
 })
 const filterdBottoms = filteredTypeClothes.filter(e => {
-    if(e.type.toLowerCase() === "bottom") {
+    if(e.type === "bottom") {
         return e
     }
 })
 const filterdShoes = filteredTypeClothes.filter(e => {
-    if(e.type.toLowerCase() === "shoes") {
+    if(e.type === "shoes") {
         return e
     }
 })
 
+// Randomization
 const randomIndex = arr => {
     return Math.floor(Math.random() * arr.length)
 }
 
+// Set img urls
 topImg.src = filterdTops[randomIndex(filterdTops)].imageUrl
 bottomImg.src = filterdBottoms[randomIndex(filterdBottoms)].imageUrl
 shoesImg.src = filterdShoes[randomIndex(filterdShoes)].imageUrl
 
-button.onclick = () => {
+// Set onClick
+tryAgain.onclick = () => {
     topImg.src = filterdTops[randomIndex(filterdTops)].imageUrl
     bottomImg.src = filterdBottoms[randomIndex(filterdBottoms)].imageUrl
     shoesImg.src = filterdShoes[randomIndex(filterdShoes)].imageUrl

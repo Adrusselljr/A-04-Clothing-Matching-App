@@ -73,6 +73,12 @@ const clothing = [
         imageUrl: 'https://slimages.macysassets.com/is/image/MCY/products/6/optimized/21650286_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$&fmt=webp',
     },
     {
+        description: "Sperry Brown Shoes",
+        type: "shoes",
+        dressCode: "formal",
+        imageUrl: "https://marvel-b1-cdn.bc0a.com/f00000000114841/www.florsheim.com/styleguide/resources/images/about/styleTips/Q27/27header.jpg",
+    },
+    {
         description: 'Casual Pants',
         type: "bottom",
         dressCode: 'casual',
